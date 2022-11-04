@@ -60,6 +60,7 @@ public class UsuarioDAO {
       String sql = "select * from usuario";
 
       try {
+         conexao = ConexaoDAO.conector();
          pstm = conexao.prepareStatement(sql);
          rs = pstm.executeQuery();
 
