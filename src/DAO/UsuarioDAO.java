@@ -35,4 +35,24 @@ public class UsuarioDAO {
          return null;
       }
    }
+
+   public void cadastrarUsuario(UsuarioDTO objUsuarioDTO) {
+      try {
+         String sql = "insert into usuario (nome, login, senha, fone, nivel_acesso) values (?,?,?,?,?)";
+
+         conexao = ConexaoDAO.conector();
+         pstm = conexao.prepareStatement(sql);
+         pstm.setString(1, objUsuarioDTO.getNome());
+         pstm.setString(2, objUsuarioDTO.getLogin());
+         pstm.setString(3, objUsuarioDTO.getSenha());
+         pstm.setString(4, objUsuarioDTO.getFone());
+         pstm.setString(5, objUsuarioDTO.getNivelDeAcesso());
+
+         pstm.execute();
+         pstm.close();
+
+      } catch (SQLException e) {
+         JOptionPane.showMessageDialog(null, "UsuariDAO Metodo Cadastrar: " + e);
+      }
+   }
 }
