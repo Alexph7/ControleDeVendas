@@ -2,7 +2,9 @@ package VIEW;
 
 import DAO.UsuarioDAO;
 import DTO.UsuarioDTO;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -43,6 +45,8 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
       btnUsuDeletar = new javax.swing.JButton();
       jLabel7 = new javax.swing.JLabel();
       txtUsuId = new javax.swing.JTextField();
+      jScrollPane1 = new javax.swing.JScrollPane();
+      tblUsuario = new javax.swing.JTable();
 
       setClosable(true);
       setIconifiable(true);
@@ -93,6 +97,11 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
       btnUsuPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
       btnUsuPesquisar.setText("Pesquisar");
       btnUsuPesquisar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      btnUsuPesquisar.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnUsuPesquisarActionPerformed(evt);
+         }
+      });
 
       btnUsuAlterar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
       btnUsuAlterar.setText("Alterar");
@@ -107,6 +116,20 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
 
       txtUsuId.setEditable(false);
       txtUsuId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+      txtUsuId.setEnabled(false);
+
+      tblUsuario.setModel(new javax.swing.table.DefaultTableModel(
+         new Object [][] {
+            {null, null, null, null},
+            {null, null, null, null},
+            {null, null, null, null},
+            {null, null, null, null}
+         },
+         new String [] {
+            "Title 1", "Title 2", "Title 3", "Title 4"
+         }
+      ));
+      jScrollPane1.setViewportView(tblUsuario);
 
       javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
       getContentPane().setLayout(layout);
@@ -154,7 +177,11 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
                      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(btnUsuDeletar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(cmbUsuNivelAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-            .addContainerGap(248, Short.MAX_VALUE))
+            .addContainerGap(41, Short.MAX_VALUE))
+         .addGroup(layout.createSequentialGroup()
+            .addGap(18, 18, 18)
+            .addComponent(jScrollPane1)
+            .addContainerGap())
       );
       layout.setVerticalGroup(
          layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +206,9 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
                .addComponent(txtUsuFone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                .addComponent(cmbUsuNivelAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                .addComponent(btnUsuCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                .addComponent(btnUsuPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,12 +217,16 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
             .addGap(23, 23, 23))
       );
 
-      setBounds(0, 0, 768, 478);
+      setBounds(0, 0, 561, 422);
    }// </editor-fold>//GEN-END:initComponents
 
    private void btnUsuCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuCadastrarActionPerformed
       cadastrar();
    }//GEN-LAST:event_btnUsuCadastrarActionPerformed
+
+   private void btnUsuPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuPesquisarActionPerformed
+      listarValoresUsuario();
+   }//GEN-LAST:event_btnUsuPesquisarActionPerformed
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private javax.swing.JButton btnUsuAlterar;
@@ -208,6 +241,8 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
    private javax.swing.JLabel jLabel5;
    private javax.swing.JLabel jLabel6;
    private javax.swing.JLabel jLabel7;
+   private javax.swing.JScrollPane jScrollPane1;
+   private javax.swing.JTable tblUsuario;
    private javax.swing.JTextField txtUsuFone;
    private javax.swing.JTextField txtUsuId;
    private javax.swing.JTextField txtUsuLogin;
@@ -251,6 +286,31 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
          JOptionPane.showMessageDialog(null, "Usuário Cadastrado com Sucesso Numero: ");
 
          limparCampos();
+      }
+   }
+
+   private void listarValoresUsuario() {
+
+      UsuarioDAO objuUsuarioDAO = new UsuarioDAO();
+      try {
+
+         DefaultTableModel model = (DefaultTableModel) tblUsuario.getModel();
+         model.setNumRows(0);
+
+         ArrayList<UsuarioDTO> lista = objuUsuarioDAO.pesquisarUsuario();
+
+         for (int i = 0; i < lista.size(); i++) {
+            model.addRow(new Object[]{
+               lista.get(i).getIdUser(),
+               lista.get(i).getNome(),
+               lista.get(i).getLogin(),
+               lista.get(i).getSenha(),
+               lista.get(i).getFone(),
+               lista.get(i).getNivelDeAcesso()
+            });
+         }
+      } catch (Exception e) {
+         JOptionPane.showMessageDialog(null, "FrmUsuario - pesquisaeUsuario() " + e);
       }
    }
 
