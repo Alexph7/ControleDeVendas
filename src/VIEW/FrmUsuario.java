@@ -17,6 +17,7 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
     */
    public FrmUsuario() {
       initComponents();
+      txtUsuNome.requestFocus();
    }
 
    /**
