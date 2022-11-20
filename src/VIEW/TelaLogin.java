@@ -8,6 +8,7 @@ package VIEW;
 import DAO.UsuarioDAO;
 import DTO.UsuarioDTO;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -39,12 +40,12 @@ public class TelaLogin extends javax.swing.JFrame {
 
       pnFundo = new javax.swing.JPanel();
       panBtnClose = new javax.swing.JPanel();
-      lblClose = new javax.swing.JLabel();
+      btnClose = new javax.swing.JLabel();
       lblBarraSup = new javax.swing.JLabel();
       lblNomeEmpresa = new javax.swing.JLabel();
       lblIconUser = new javax.swing.JLabel();
       lblIniciarSessao = new javax.swing.JLabel();
-      lblFundoLado = new javax.swing.JLabel();
+      lblFundoAzul = new javax.swing.JLabel();
       txtLogin = new javax.swing.JTextField();
       sepUsuario = new javax.swing.JSeparator();
       lblUsuario = new javax.swing.JLabel();
@@ -68,20 +69,20 @@ public class TelaLogin extends javax.swing.JFrame {
       panBtnClose.setBackground(new java.awt.Color(255, 255, 255));
       panBtnClose.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
 
-      lblClose.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-      lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      lblClose.setText("x");
-      lblClose.setToolTipText("Fechar");
-      lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-      lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
+      btnClose.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+      btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+      btnClose.setText("x");
+      btnClose.setToolTipText("Fechar");
+      btnClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
          public void mouseClicked(java.awt.event.MouseEvent evt) {
-            lblCloseMouseClicked(evt);
+            btnCloseMouseClicked(evt);
          }
          public void mouseExited(java.awt.event.MouseEvent evt) {
-            lblCloseMouseExited(evt);
+            btnCloseMouseExited(evt);
          }
          public void mouseEntered(java.awt.event.MouseEvent evt) {
-            lblCloseMouseEntered(evt);
+            btnCloseMouseEntered(evt);
          }
       });
 
@@ -91,13 +92,13 @@ public class TelaLogin extends javax.swing.JFrame {
          panBtnCloseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panBtnCloseLayout.createSequentialGroup()
             .addGap(0, 0, Short.MAX_VALUE)
-            .addComponent(lblClose, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
       );
       panBtnCloseLayout.setVerticalGroup(
          panBtnCloseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panBtnCloseLayout.createSequentialGroup()
             .addGap(0, 0, Short.MAX_VALUE)
-            .addComponent(lblClose, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
       );
 
       pnFundo.add(panBtnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 40, 30));
@@ -141,8 +142,8 @@ public class TelaLogin extends javax.swing.JFrame {
       lblIniciarSessao.setText("Iniciar Sessão");
       pnFundo.add(lblIniciarSessao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 170, 50));
 
-      lblFundoLado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pictures/fundo1.jpg"))); // NOI18N
-      pnFundo.add(lblFundoLado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 380));
+      lblFundoAzul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pictures/fundo1.jpg"))); // NOI18N
+      pnFundo.add(lblFundoAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 380));
 
       txtLogin.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
       txtLogin.setBorder(null);
@@ -155,6 +156,11 @@ public class TelaLogin extends javax.swing.JFrame {
       txtLogin.addMouseListener(new java.awt.event.MouseAdapter() {
          public void mousePressed(java.awt.event.MouseEvent evt) {
             txtLoginMousePressed(evt);
+         }
+      });
+      txtLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+         public void keyPressed(java.awt.event.KeyEvent evt) {
+            txtLoginKeyPressed(evt);
          }
       });
       pnFundo.add(txtLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 350, 30));
@@ -185,6 +191,11 @@ public class TelaLogin extends javax.swing.JFrame {
       txtSenha.addMouseListener(new java.awt.event.MouseAdapter() {
          public void mousePressed(java.awt.event.MouseEvent evt) {
             txtSenhaMousePressed(evt);
+         }
+      });
+      txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+         public void keyPressed(java.awt.event.KeyEvent evt) {
+            txtSenhaKeyPressed(evt);
          }
       });
       pnFundo.add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 350, 30));
@@ -247,21 +258,21 @@ public class TelaLogin extends javax.swing.JFrame {
       setLocationRelativeTo(null);
    }// </editor-fold>//GEN-END:initComponents
 
-   private void lblCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseEntered
+   private void btnCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseEntered
       //Quando o Mouse Entrar Na área de um componente
       //neste caso quando entrar na area do x para fechar a janela o label ficara vermelho
       panBtnClose.setBackground(Color.red);
-   }//GEN-LAST:event_lblCloseMouseEntered
+   }//GEN-LAST:event_btnCloseMouseEntered
 
-   private void lblCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseExited
+   private void btnCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseExited
       //Disparado quando o mouse sai da área de um componente.
       panBtnClose.setBackground(Color.white);
-   }//GEN-LAST:event_lblCloseMouseExited
+   }//GEN-LAST:event_btnCloseMouseExited
 
-   private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
+   private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
       //Disparado quando o botão do mouse é clicado (pressionado e liberado) em um componente.
       System.exit(0);
-   }//GEN-LAST:event_lblCloseMouseClicked
+   }//GEN-LAST:event_btnCloseMouseClicked
 
    private void lblBarraSupMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBarraSupMousePressed
       xMouse = evt.getX();
@@ -336,6 +347,18 @@ public class TelaLogin extends javax.swing.JFrame {
       }
    }//GEN-LAST:event_txtLoginFocusGained
 
+   private void txtLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLoginKeyPressed
+      if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+         txtSenha.requestFocus();
+      }
+   }//GEN-LAST:event_txtLoginKeyPressed
+
+   private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+      if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+         logar();
+      }
+   }//GEN-LAST:event_txtSenhaKeyPressed
+
    /**
     * @param args the command line arguments
     */
@@ -382,11 +405,11 @@ public class TelaLogin extends javax.swing.JFrame {
    }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
+   private javax.swing.JLabel btnClose;
    private javax.swing.JLabel btnLogin;
    private javax.swing.JLabel lblBarraSup;
    private javax.swing.JLabel lblBemVindo;
-   private javax.swing.JLabel lblClose;
-   private javax.swing.JLabel lblFundoLado;
+   private javax.swing.JLabel lblFundoAzul;
    private javax.swing.JLabel lblIconUser;
    private javax.swing.JLabel lblIniciarSessao;
    private javax.swing.JLabel lblNomeEmpresa;
