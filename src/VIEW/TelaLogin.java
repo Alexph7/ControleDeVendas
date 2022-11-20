@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 public class TelaLogin extends javax.swing.JFrame {
 
    int xMouse, yMouse;
+   String mensagemUser = "Digite o Nome do Usuário";
 
    /**
     * Creates new form TelaLogin
@@ -44,15 +45,15 @@ public class TelaLogin extends javax.swing.JFrame {
       lblIconUser = new javax.swing.JLabel();
       lblIniciarSessao = new javax.swing.JLabel();
       lblFundoLado = new javax.swing.JLabel();
-      txtLogUsuario = new javax.swing.JTextField();
+      txtLogin = new javax.swing.JTextField();
       sepUsuario = new javax.swing.JSeparator();
       lblUsuario = new javax.swing.JLabel();
       lblSenha = new javax.swing.JLabel();
       sepSenha = new javax.swing.JSeparator();
       lblBemVindo = new javax.swing.JLabel();
-      txtLogSenha = new javax.swing.JPasswordField();
+      txtSenha = new javax.swing.JPasswordField();
       panBtnLogar = new javax.swing.JPanel();
-      lblLogar = new javax.swing.JLabel();
+      btnLogin = new javax.swing.JLabel();
       sepBemVindo = new javax.swing.JSeparator();
       panBarraSup = new javax.swing.JPanel();
 
@@ -132,7 +133,7 @@ public class TelaLogin extends javax.swing.JFrame {
       pnFundo.add(lblNomeEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 260, 30));
 
       lblIconUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pictures/user2.png"))); // NOI18N
-      pnFundo.add(lblIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
+      pnFundo.add(lblIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
       lblIniciarSessao.setFont(new java.awt.Font("Tahoma", 0, 26)); // NOI18N
       lblIniciarSessao.setForeground(new java.awt.Color(255, 255, 255));
@@ -143,15 +144,20 @@ public class TelaLogin extends javax.swing.JFrame {
       lblFundoLado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pictures/fundo1.jpg"))); // NOI18N
       pnFundo.add(lblFundoLado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 380));
 
-      txtLogUsuario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-      txtLogUsuario.setBorder(null);
-      txtLogUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-      txtLogUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-         public void mousePressed(java.awt.event.MouseEvent evt) {
-            txtLogUsuarioMousePressed(evt);
+      txtLogin.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+      txtLogin.setBorder(null);
+      txtLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+      txtLogin.addFocusListener(new java.awt.event.FocusAdapter() {
+         public void focusGained(java.awt.event.FocusEvent evt) {
+            txtLoginFocusGained(evt);
          }
       });
-      pnFundo.add(txtLogUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 350, 30));
+      txtLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mousePressed(java.awt.event.MouseEvent evt) {
+            txtLoginMousePressed(evt);
+         }
+      });
+      pnFundo.add(txtLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 350, 30));
       pnFundo.add(sepUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 350, 30));
 
       lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -168,29 +174,37 @@ public class TelaLogin extends javax.swing.JFrame {
       lblBemVindo.setText("BEM-VINDO");
       pnFundo.add(lblBemVindo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 420, -1));
 
-      txtLogSenha.setForeground(new java.awt.Color(153, 153, 153));
-      txtLogSenha.setText("Field");
-      txtLogSenha.setBorder(null);
-      txtLogSenha.addMouseListener(new java.awt.event.MouseAdapter() {
-         public void mousePressed(java.awt.event.MouseEvent evt) {
-            txtLogSenhaMousePressed(evt);
+      txtSenha.setForeground(new java.awt.Color(153, 153, 153));
+      txtSenha.setText("Field");
+      txtSenha.setBorder(null);
+      txtSenha.addFocusListener(new java.awt.event.FocusAdapter() {
+         public void focusGained(java.awt.event.FocusEvent evt) {
+            txtSenhaFocusGained(evt);
          }
       });
-      pnFundo.add(txtLogSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 350, 30));
+      txtSenha.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mousePressed(java.awt.event.MouseEvent evt) {
+            txtSenhaMousePressed(evt);
+         }
+      });
+      pnFundo.add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 350, 30));
 
       panBtnLogar.setBackground(new java.awt.Color(9, 22, 39));
 
-      lblLogar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-      lblLogar.setForeground(new java.awt.Color(255, 255, 255));
-      lblLogar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      lblLogar.setText("Entrar");
-      lblLogar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-      lblLogar.addMouseListener(new java.awt.event.MouseAdapter() {
+      btnLogin.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+      btnLogin.setForeground(new java.awt.Color(255, 255, 255));
+      btnLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+      btnLogin.setText("Entrar");
+      btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      btnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseClicked(java.awt.event.MouseEvent evt) {
+            btnLoginMouseClicked(evt);
+         }
          public void mouseExited(java.awt.event.MouseEvent evt) {
-            lblLogarMouseExited(evt);
+            btnLoginMouseExited(evt);
          }
          public void mouseEntered(java.awt.event.MouseEvent evt) {
-            lblLogarMouseEntered(evt);
+            btnLoginMouseEntered(evt);
          }
       });
 
@@ -200,13 +214,13 @@ public class TelaLogin extends javax.swing.JFrame {
          panBtnLogarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panBtnLogarLayout.createSequentialGroup()
             .addGap(0, 0, Short.MAX_VALUE)
-            .addComponent(lblLogar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
       );
       panBtnLogarLayout.setVerticalGroup(
          panBtnLogarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panBtnLogarLayout.createSequentialGroup()
             .addGap(0, 0, Short.MAX_VALUE)
-            .addComponent(lblLogar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
       );
 
       pnFundo.add(panBtnLogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 300, 130, 40));
@@ -269,34 +283,58 @@ public class TelaLogin extends javax.swing.JFrame {
       panBarraSup.setBackground(new Color(255, 255, 255));
    }//GEN-LAST:event_lblBarraSupMouseExited
 
-   private void lblLogarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogarMouseEntered
+   private void btnLoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseEntered
       panBtnLogar.setBackground(new Color(39, 54, 86));
-   }//GEN-LAST:event_lblLogarMouseEntered
+   }//GEN-LAST:event_btnLoginMouseEntered
 
-   private void lblLogarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogarMouseExited
+   private void btnLoginMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseExited
       panBtnLogar.setBackground(new Color(9, 22, 39));
-   }//GEN-LAST:event_lblLogarMouseExited
+   }//GEN-LAST:event_btnLoginMouseExited
 
-   private void txtLogSenhaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLogSenhaMousePressed
-      if (txtLogUsuario.getText().isEmpty()) {
-         txtLogUsuario.setText("Digite o Nome de Usuário");
-         txtLogUsuario.setForeground(new Color(153, 153, 153));
+   private void txtSenhaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSenhaMousePressed
+      if (txtLogin.getText().isEmpty()) {
+         txtLogin.setText(mensagemUser);
+         txtLogin.setForeground(new Color(153, 153, 153));
       }
-      txtLogSenha.setText(null);
-      txtLogSenha.setForeground(new Color(0, 0, 0));
-   }//GEN-LAST:event_txtLogSenhaMousePressed
+      txtSenha.setText(null);
+      txtSenha.setForeground(new Color(0, 0, 0));
+   }//GEN-LAST:event_txtSenhaMousePressed
 
-   private void txtLogUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLogUsuarioMousePressed
-      if (txtLogUsuario.getText().equals("Digite o Nome de Usuário")) {
-         txtLogUsuario.setText(null);
-      }
-
-      if (String.valueOf(txtLogSenha.getPassword()).isEmpty()) {
-         txtLogSenha.setText("*****");
-         txtLogSenha.setForeground(new Color(153, 153, 153));
+   private void txtLoginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLoginMousePressed
+      if (txtLogin.getText().equals(mensagemUser)) {
+         txtLogin.setText(null);
       }
 
-   }//GEN-LAST:event_txtLogUsuarioMousePressed
+      if (String.valueOf(txtSenha.getPassword()).isEmpty()) {
+         txtSenha.setText("*****");
+         txtSenha.setForeground(new Color(153, 153, 153));
+      }
+   }//GEN-LAST:event_txtLoginMousePressed
+
+   private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
+      logar();
+   }//GEN-LAST:event_btnLoginMouseClicked
+
+   private void txtSenhaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSenhaFocusGained
+      //Quando o Componente Ganha Foco
+      if (txtLogin.getText().isEmpty()) {
+         txtLogin.setText(mensagemUser);
+         txtLogin.setForeground(new Color(153, 153, 153));
+      }
+      txtSenha.setText(null);
+      txtSenha.setForeground(new Color(0, 0, 0));
+   }//GEN-LAST:event_txtSenhaFocusGained
+
+   private void txtLoginFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtLoginFocusGained
+      if (txtLogin.getText().equals(mensagemUser)) {
+         txtLogin.setText(null);
+      }
+
+      if (String.valueOf(txtSenha.getPassword()).isEmpty()) {
+         txtSenha.setText("*****");
+         txtSenha.setForeground(new Color(153, 153, 153));
+      }
+   }//GEN-LAST:event_txtLoginFocusGained
 
    /**
     * @param args the command line arguments
@@ -312,16 +350,24 @@ public class TelaLogin extends javax.swing.JFrame {
             if ("Nimbus".equals(info.getName())) {
                javax.swing.UIManager.setLookAndFeel(info.getClassName());
                break;
+
             }
          }
       } catch (ClassNotFoundException ex) {
-         java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+         java.util.logging.Logger.getLogger(TelaLogin.class
+               .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
       } catch (InstantiationException ex) {
-         java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+         java.util.logging.Logger.getLogger(TelaLogin.class
+               .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
       } catch (IllegalAccessException ex) {
-         java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+         java.util.logging.Logger.getLogger(TelaLogin.class
+               .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
       } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-         java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+         java.util.logging.Logger.getLogger(TelaLogin.class
+               .getName()).log(java.util.logging.Level.SEVERE, null, ex);
       }
       //</editor-fold>
 
@@ -336,13 +382,13 @@ public class TelaLogin extends javax.swing.JFrame {
    }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
+   private javax.swing.JLabel btnLogin;
    private javax.swing.JLabel lblBarraSup;
    private javax.swing.JLabel lblBemVindo;
    private javax.swing.JLabel lblClose;
    private javax.swing.JLabel lblFundoLado;
    private javax.swing.JLabel lblIconUser;
    private javax.swing.JLabel lblIniciarSessao;
-   private javax.swing.JLabel lblLogar;
    private javax.swing.JLabel lblNomeEmpresa;
    private javax.swing.JLabel lblSenha;
    private javax.swing.JLabel lblUsuario;
@@ -353,16 +399,16 @@ public class TelaLogin extends javax.swing.JFrame {
    private javax.swing.JSeparator sepBemVindo;
    private javax.swing.JSeparator sepSenha;
    private javax.swing.JSeparator sepUsuario;
-   private javax.swing.JPasswordField txtLogSenha;
-   private javax.swing.JTextField txtLogUsuario;
+   private javax.swing.JTextField txtLogin;
+   private javax.swing.JPasswordField txtSenha;
    // End of variables declaration//GEN-END:variables
 
    private void logar() {
       try {
          String login, senha;
 
-         login = txtLogUsuario.getText();
-         senha = new String(txtLogSenha.getPassword());
+         login = txtLogin.getText();
+         senha = new String(txtSenha.getPassword());
 
          UsuarioDTO objUsuarioDto = new UsuarioDTO();
          objUsuarioDto.setLogin(login);
@@ -382,10 +428,10 @@ public class TelaLogin extends javax.swing.JFrame {
                dispose();
             }
          } else {
-            JOptionPane.showMessageDialog(null, "UsuÃ¡rio ou Senha Incorreto");
+            JOptionPane.showMessageDialog(null, "Usuário ou Senha Incorreto");
          }
       } catch (SQLException e) {
-         JOptionPane.showMessageDialog(null, "VIEW/btnLoginEntrar: " + e);
+         JOptionPane.showMessageDialog(null, "VIEW/TelaLogin: " + e);
       }
    }
 
