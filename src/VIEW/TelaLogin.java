@@ -418,7 +418,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
          if (rsUsuarioDao.next()) {
             String perfil = rsUsuarioDao.getString(4);
-            FrmTelaPrincipal telaPrincipal = new FrmTelaPrincipal();
+            TelaPrincipal telaPrincipal = new TelaPrincipal();
 
             if (perfil.equals("Administrador")) {
                telaPrincipal.setVisible(true);
