@@ -39,13 +39,13 @@ public class TelaLogin extends javax.swing.JFrame {
    private void initComponents() {
 
       pnFundo = new javax.swing.JPanel();
-      panBtnClose = new javax.swing.JPanel();
-      btnClose = new javax.swing.JLabel();
       lblBarraSup = new javax.swing.JLabel();
       lblNomeEmpresa = new javax.swing.JLabel();
       lblIconUser = new javax.swing.JLabel();
       lblIniciarSessao = new javax.swing.JLabel();
       lblFundoAzul = new javax.swing.JLabel();
+      panBtnClose = new javax.swing.JPanel();
+      btnClose = new javax.swing.JLabel();
       txtLogin = new javax.swing.JTextField();
       sepUsuario = new javax.swing.JSeparator();
       lblUsuario = new javax.swing.JLabel();
@@ -65,43 +65,6 @@ public class TelaLogin extends javax.swing.JFrame {
 
       pnFundo.setBackground(new java.awt.Color(255, 255, 255));
       pnFundo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-      panBtnClose.setBackground(new java.awt.Color(255, 255, 255));
-      panBtnClose.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
-
-      btnClose.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-      btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      btnClose.setText("x");
-      btnClose.setToolTipText("Fechar");
-      btnClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-      btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
-         public void mouseClicked(java.awt.event.MouseEvent evt) {
-            btnCloseMouseClicked(evt);
-         }
-         public void mouseExited(java.awt.event.MouseEvent evt) {
-            btnCloseMouseExited(evt);
-         }
-         public void mouseEntered(java.awt.event.MouseEvent evt) {
-            btnCloseMouseEntered(evt);
-         }
-      });
-
-      javax.swing.GroupLayout panBtnCloseLayout = new javax.swing.GroupLayout(panBtnClose);
-      panBtnClose.setLayout(panBtnCloseLayout);
-      panBtnCloseLayout.setHorizontalGroup(
-         panBtnCloseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panBtnCloseLayout.createSequentialGroup()
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-      );
-      panBtnCloseLayout.setVerticalGroup(
-         panBtnCloseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panBtnCloseLayout.createSequentialGroup()
-            .addGap(0, 0, Short.MAX_VALUE)
-            .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-      );
-
-      pnFundo.add(panBtnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 40, 30));
 
       lblBarraSup.setBackground(new java.awt.Color(255, 255, 255));
       lblBarraSup.setToolTipText("Arrastar Janela");
@@ -144,6 +107,44 @@ public class TelaLogin extends javax.swing.JFrame {
 
       lblFundoAzul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pictures/fundo1.jpg"))); // NOI18N
       pnFundo.add(lblFundoAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 380));
+
+      panBtnClose.setBackground(new java.awt.Color(255, 255, 255));
+      panBtnClose.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
+
+      btnClose.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+      btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+      btnClose.setText("x");
+      btnClose.setToolTipText("Fechar");
+      btnClose.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+      btnClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseClicked(java.awt.event.MouseEvent evt) {
+            btnCloseMouseClicked(evt);
+         }
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            btnCloseMouseExited(evt);
+         }
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            btnCloseMouseEntered(evt);
+         }
+      });
+
+      javax.swing.GroupLayout panBtnCloseLayout = new javax.swing.GroupLayout(panBtnClose);
+      panBtnClose.setLayout(panBtnCloseLayout);
+      panBtnCloseLayout.setHorizontalGroup(
+         panBtnCloseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panBtnCloseLayout.createSequentialGroup()
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+      );
+      panBtnCloseLayout.setVerticalGroup(
+         panBtnCloseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panBtnCloseLayout.createSequentialGroup()
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+      );
+
+      pnFundo.add(panBtnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 40, 30));
 
       txtLogin.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
       txtLogin.setBorder(null);
