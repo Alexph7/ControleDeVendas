@@ -84,6 +84,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
       btnOpcoes.setForeground(new java.awt.Color(255, 255, 255));
       btnOpcoes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       btnOpcoes.setText("OPÇÕES");
+      btnOpcoes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
       panPrincipal.add(btnOpcoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 240, 60));
 
       lblIconUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -100,6 +101,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
       btnRelatorios.setForeground(new java.awt.Color(255, 255, 255));
       btnRelatorios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       btnRelatorios.setText("RELATÓRIOS");
+      btnRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
       btnRelatorios.addMouseListener(new java.awt.event.MouseAdapter() {
          public void mouseExited(java.awt.event.MouseEvent evt) {
             btnRelatoriosMouseExited(evt);
@@ -146,6 +148,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
       btnCadastro.setForeground(new java.awt.Color(255, 255, 255));
       btnCadastro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       btnCadastro.setText("CADASTRO");
+      btnCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
       btnCadastro.addMouseListener(new java.awt.event.MouseAdapter() {
          public void mouseExited(java.awt.event.MouseEvent evt) {
             btnCadastroMouseExited(evt);
