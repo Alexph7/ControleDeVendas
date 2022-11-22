@@ -20,6 +20,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     */
    public TelaPrincipal() {
       initComponents();
+      panCadastro.setBackground(new Color(0, 0, 0, 0));
+      panRelatorios.setBackground(new Color(0, 0, 0, 0));
    }
 
    /**
@@ -33,26 +35,27 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
       panPrincipal = new javax.swing.JPanel();
       lblBarraSup = new javax.swing.JLabel();
-      panBarraSup = new javax.swing.JPanel();
-      panFundoEsquerd = new javax.swing.JPanel();
-      btnCadastro = new javax.swing.JLabel();
-      btnRelatorios = new javax.swing.JLabel();
       btnOpcoes = new javax.swing.JLabel();
+      lblIconUser = new javax.swing.JLabel();
+      lblNomeUser = new javax.swing.JLabel();
+      btnRelatorios = new javax.swing.JLabel();
       jSeparator1 = new javax.swing.JSeparator();
       jSeparator2 = new javax.swing.JSeparator();
       jSeparator3 = new javax.swing.JSeparator();
-      lblIconUser = new javax.swing.JLabel();
-      lblNomeUser = new javax.swing.JLabel();
+      panRelatorios = new javax.swing.JPanel();
+      panOpcoes = new javax.swing.JPanel();
+      panCadastro = new javax.swing.JPanel();
+      btnCadastro = new javax.swing.JLabel();
       lblIconFundoAzul = new javax.swing.JLabel();
+      panBarraSup = new javax.swing.JPanel();
       panBtnClose = new javax.swing.JPanel();
       lblBtnClose = new javax.swing.JLabel();
-      jLabel1 = new javax.swing.JLabel();
+      lblIconLogo = new javax.swing.JLabel();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       setTitle("Tela Principal");
       setBackground(new java.awt.Color(255, 255, 255));
       setUndecorated(true);
-      setPreferredSize(new java.awt.Dimension(760, 450));
       getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
       panPrincipal.setBackground(new java.awt.Color(255, 255, 255));
@@ -76,57 +79,90 @@ public class TelaPrincipal extends javax.swing.JFrame {
       });
       panPrincipal.add(lblBarraSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 30));
 
-      panBarraSup.setBackground(new java.awt.Color(255, 255, 255));
-      panPrincipal.add(panBarraSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 480, 30));
-
-      panFundoEsquerd.setBackground(new java.awt.Color(54, 162, 97));
-      panFundoEsquerd.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-      btnCadastro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-      btnCadastro.setForeground(new java.awt.Color(255, 255, 255));
-      btnCadastro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      btnCadastro.setText("CADASTRO");
-      panFundoEsquerd.add(btnCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 240, 60));
-
-      btnRelatorios.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-      btnRelatorios.setForeground(new java.awt.Color(255, 255, 255));
-      btnRelatorios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      btnRelatorios.setText("RELATÓRIOS");
-      panFundoEsquerd.add(btnRelatorios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 240, 60));
-
       btnOpcoes.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
       btnOpcoes.setForeground(new java.awt.Color(255, 255, 255));
       btnOpcoes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       btnOpcoes.setText("OPÇÕES");
-      panFundoEsquerd.add(btnOpcoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 240, 60));
-
-      jSeparator1.setBackground(new java.awt.Color(102, 102, 102));
-      jSeparator1.setForeground(new java.awt.Color(153, 153, 153));
-      panFundoEsquerd.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 180, 10));
-
-      jSeparator2.setBackground(new java.awt.Color(102, 102, 102));
-      jSeparator2.setForeground(new java.awt.Color(153, 153, 153));
-      panFundoEsquerd.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 180, 10));
-
-      jSeparator3.setBackground(new java.awt.Color(102, 102, 102));
-      jSeparator3.setForeground(new java.awt.Color(153, 153, 153));
-      panFundoEsquerd.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 180, 10));
+      panPrincipal.add(btnOpcoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 240, 60));
 
       lblIconUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       lblIconUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pictures/icon user Azul.png"))); // NOI18N
-      panFundoEsquerd.add(lblIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 240, 80));
+      panPrincipal.add(lblIconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 240, 80));
 
       lblNomeUser.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
       lblNomeUser.setForeground(new java.awt.Color(255, 255, 255));
       lblNomeUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       lblNomeUser.setText("Usuário");
-      panFundoEsquerd.add(lblNomeUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 240, -1));
+      panPrincipal.add(lblNomeUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 240, -1));
+
+      btnRelatorios.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+      btnRelatorios.setForeground(new java.awt.Color(255, 255, 255));
+      btnRelatorios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+      btnRelatorios.setText("RELATÓRIOS");
+      btnRelatorios.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            btnRelatoriosMouseExited(evt);
+         }
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            btnRelatoriosMouseEntered(evt);
+         }
+      });
+      panPrincipal.add(btnRelatorios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 240, 60));
+
+      jSeparator1.setBackground(new java.awt.Color(102, 102, 102));
+      jSeparator1.setForeground(new java.awt.Color(153, 153, 153));
+      panPrincipal.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 180, 10));
+
+      jSeparator2.setBackground(new java.awt.Color(102, 102, 102));
+      jSeparator2.setForeground(new java.awt.Color(153, 153, 153));
+      panPrincipal.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 180, 10));
+
+      jSeparator3.setBackground(new java.awt.Color(102, 102, 102));
+      jSeparator3.setForeground(new java.awt.Color(153, 153, 153));
+      panPrincipal.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 180, 10));
+
+      panRelatorios.setBackground(new java.awt.Color(102, 102, 102));
+      panRelatorios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+      panPrincipal.add(panRelatorios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 240, 60));
+
+      panOpcoes.setBackground(new java.awt.Color(102, 102, 102));
+      panOpcoes.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            panOpcoesMouseExited(evt);
+         }
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            panOpcoesMouseEntered(evt);
+         }
+      });
+      panOpcoes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+      panPrincipal.add(panOpcoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 240, 60));
+
+      panCadastro.setBackground(new java.awt.Color(102, 102, 102));
+      panCadastro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+      btnCadastro.setBackground(new java.awt.Color(153, 153, 153));
+      btnCadastro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+      btnCadastro.setForeground(new java.awt.Color(255, 255, 255));
+      btnCadastro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+      btnCadastro.setText("CADASTRO");
+      btnCadastro.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            btnCadastroMouseExited(evt);
+         }
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            btnCadastroMouseEntered(evt);
+         }
+      });
+      panCadastro.add(btnCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 60));
+
+      panPrincipal.add(panCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 240, 60));
 
       lblIconFundoAzul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pictures/fundo1.jpg"))); // NOI18N
       lblIconFundoAzul.setText("jLabel3");
-      panFundoEsquerd.add(lblIconFundoAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 460));
+      panPrincipal.add(lblIconFundoAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 450));
 
-      panPrincipal.add(panFundoEsquerd, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 460));
+      panBarraSup.setBackground(new java.awt.Color(255, 255, 255));
+      panPrincipal.add(panBarraSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 480, 30));
 
       panBtnClose.setBackground(new java.awt.Color(255, 255, 255));
       panBtnClose.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -151,11 +187,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
       panPrincipal.add(panBtnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, 40, 30));
 
-      jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-      jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      jLabel1.setText("LOGO");
-      jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-      panPrincipal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 340, 310));
+      lblIconLogo.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+      lblIconLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+      lblIconLogo.setText("LOGO");
+      lblIconLogo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+      panPrincipal.add(lblIconLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 340, 310));
 
       getContentPane().add(panPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 450));
 
@@ -193,6 +229,41 @@ public class TelaPrincipal extends javax.swing.JFrame {
    private void lblBarraSupMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBarraSupMouseExited
       panBarraSup.setBackground(Color.white);
    }//GEN-LAST:event_lblBarraSupMouseExited
+
+   private void btnCadastroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroMouseEntered
+
+      panCadastro.setOpaque(true);
+      panCadastro.setBackground(new Color(7, 37, 156, 120));
+      repaint(); //Resolveu Problema de primeiro frame com Problema trazendo imagem estranha
+   }//GEN-LAST:event_btnCadastroMouseEntered
+
+   private void btnCadastroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroMouseExited
+      panCadastro.setOpaque(false);
+      panCadastro.setBackground(new Color(0, 0, 0, 1));
+   }//GEN-LAST:event_btnCadastroMouseExited
+
+   private void btnRelatoriosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatoriosMouseEntered
+
+      panRelatorios.setOpaque(true);
+      panRelatorios.setBackground(new Color(7, 37, 156, 120));
+      repaint();
+   }//GEN-LAST:event_btnRelatoriosMouseEntered
+
+   private void btnRelatoriosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatoriosMouseExited
+      panRelatorios.setOpaque(false);
+      panRelatorios.setBackground(new Color(0, 0, 0, 1));
+   }//GEN-LAST:event_btnRelatoriosMouseExited
+
+   private void panOpcoesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panOpcoesMouseEntered
+      panOpcoes.setOpaque(true);
+      panOpcoes.setBackground(new Color(7, 37, 156, 120));
+      repaint();
+   }//GEN-LAST:event_panOpcoesMouseEntered
+
+   private void panOpcoesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panOpcoesMouseExited
+      panOpcoes.setOpaque(false);
+      panOpcoes.setBackground(new Color(0, 0, 0, 1));
+   }//GEN-LAST:event_panOpcoesMouseExited
 
    /**
     * @param args the command line arguments
@@ -235,18 +306,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
    private javax.swing.JLabel btnCadastro;
    private javax.swing.JLabel btnOpcoes;
    private javax.swing.JLabel btnRelatorios;
-   private javax.swing.JLabel jLabel1;
    private javax.swing.JSeparator jSeparator1;
    private javax.swing.JSeparator jSeparator2;
    private javax.swing.JSeparator jSeparator3;
    private javax.swing.JLabel lblBarraSup;
    private javax.swing.JLabel lblBtnClose;
    private javax.swing.JLabel lblIconFundoAzul;
+   private javax.swing.JLabel lblIconLogo;
    private javax.swing.JLabel lblIconUser;
    private javax.swing.JLabel lblNomeUser;
    private javax.swing.JPanel panBarraSup;
    private javax.swing.JPanel panBtnClose;
-   private javax.swing.JPanel panFundoEsquerd;
+   private javax.swing.JPanel panCadastro;
+   private javax.swing.JPanel panOpcoes;
    private javax.swing.JPanel panPrincipal;
+   private javax.swing.JPanel panRelatorios;
    // End of variables declaration//GEN-END:variables
 }
