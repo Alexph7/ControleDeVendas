@@ -22,6 +22,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
       initComponents();
       panCadastro.setBackground(new Color(0, 0, 0, 0));
       panRelatorios.setBackground(new Color(0, 0, 0, 0));
+      panOpcoes.setBackground(new Color(0, 0, 0, 0));
    }
 
    /**
