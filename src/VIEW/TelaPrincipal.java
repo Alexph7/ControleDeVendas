@@ -6,6 +6,7 @@
 package VIEW;
 
 import java.awt.Color;
+import javax.swing.JPanel;
 
 /**
  *
@@ -20,7 +21,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     */
    public TelaPrincipal() {
       initComponents();
-
    }
 
    /**
@@ -32,10 +32,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
    private void initComponents() {
 
+      lblBarraSup = new javax.swing.JLabel();
+      lblIconLogo = new javax.swing.JLabel();
+      panDinamico = new javax.swing.JPanel();
       panPrincipal = new javax.swing.JPanel();
       btnCadastro = new javax.swing.JLabel();
       btnOpcoesSobre = new javax.swing.JLabel();
-      lblBarraSup = new javax.swing.JLabel();
       btnOpcoes = new javax.swing.JLabel();
       lblIconUser = new javax.swing.JLabel();
       lblNomeUser = new javax.swing.JLabel();
@@ -49,49 +51,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
       panBarraSup = new javax.swing.JPanel();
       panBtnClose = new javax.swing.JPanel();
       BtnClose = new javax.swing.JLabel();
-      lblIconLogo = new javax.swing.JLabel();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       setTitle("Tela Principal");
       setBackground(new java.awt.Color(255, 255, 255));
       setUndecorated(true);
+      setResizable(false);
       getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-      panPrincipal.setBackground(new java.awt.Color(255, 255, 255));
-      panPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-      btnCadastro.setBackground(new java.awt.Color(153, 153, 153));
-      btnCadastro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-      btnCadastro.setForeground(new java.awt.Color(255, 255, 255));
-      btnCadastro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      btnCadastro.setText("CADASTRO");
-      btnCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-      btnCadastro.addMouseListener(new java.awt.event.MouseAdapter() {
-         public void mouseExited(java.awt.event.MouseEvent evt) {
-            btnCadastroMouseExited(evt);
-         }
-         public void mouseEntered(java.awt.event.MouseEvent evt) {
-            btnCadastroMouseEntered(evt);
-         }
-      });
-      panPrincipal.add(btnCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 240, 60));
-
-      btnOpcoesSobre.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-      btnOpcoesSobre.setForeground(new java.awt.Color(255, 255, 255));
-      btnOpcoesSobre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      btnOpcoesSobre.setText("SOBRE");
-      btnOpcoesSobre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-      btnOpcoesSobre.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-      btnOpcoesSobre.addMouseListener(new java.awt.event.MouseAdapter() {
-         public void mouseExited(java.awt.event.MouseEvent evt) {
-            btnOpcoesSobreMouseExited(evt);
-         }
-         public void mouseEntered(java.awt.event.MouseEvent evt) {
-            btnOpcoesSobreMouseEntered(evt);
-         }
-      });
-      panPrincipal.add(btnOpcoesSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 352, 240, 30));
-
+      lblBarraSup.setBackground(new java.awt.Color(255, 255, 255));
+      lblBarraSup.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+      lblBarraSup.setForeground(new java.awt.Color(255, 255, 255));
       lblBarraSup.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
          public void mouseDragged(java.awt.event.MouseEvent evt) {
             lblBarraSupMouseDragged(evt);
@@ -108,13 +78,61 @@ public class TelaPrincipal extends javax.swing.JFrame {
             lblBarraSupMouseEntered(evt);
          }
       });
-      panPrincipal.add(lblBarraSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 30));
+      getContentPane().add(lblBarraSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 30));
+
+      lblIconLogo.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+      lblIconLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+      lblIconLogo.setText("LOGO");
+      lblIconLogo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+      getContentPane().add(lblIconLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 340, 310));
+
+      panDinamico.setBackground(new java.awt.Color(255, 255, 255));
+      panDinamico.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+      getContentPane().add(panDinamico, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 520, 420));
+
+      panPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+      panPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+      btnCadastro.setBackground(new java.awt.Color(153, 153, 153));
+      btnCadastro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+      btnCadastro.setForeground(new java.awt.Color(255, 255, 255));
+      btnCadastro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+      btnCadastro.setText("CADASTRO");
+      btnCadastro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+      btnCadastro.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            btnCadastroMouseExited(evt);
+         }
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            btnCadastroMouseEntered(evt);
+         }
+      });
+      panPrincipal.add(btnCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 240, 60));
+
+      btnOpcoesSobre.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+      btnOpcoesSobre.setForeground(new java.awt.Color(255, 255, 255));
+      btnOpcoesSobre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+      btnOpcoesSobre.setText("SOBRE");
+      btnOpcoesSobre.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+      btnOpcoesSobre.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+      btnOpcoesSobre.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseClicked(java.awt.event.MouseEvent evt) {
+            btnOpcoesSobreMouseClicked(evt);
+         }
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            btnOpcoesSobreMouseExited(evt);
+         }
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            btnOpcoesSobreMouseEntered(evt);
+         }
+      });
+      panPrincipal.add(btnOpcoesSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 352, 240, 30));
 
       btnOpcoes.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
       btnOpcoes.setForeground(new java.awt.Color(255, 255, 255));
       btnOpcoes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       btnOpcoes.setText("OPÇÕES");
-      btnOpcoes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      btnOpcoes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
       btnOpcoes.addMouseListener(new java.awt.event.MouseAdapter() {
          public void mouseExited(java.awt.event.MouseEvent evt) {
             btnOpcoesMouseExited(evt);
@@ -139,7 +157,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
       btnRelatorios.setForeground(new java.awt.Color(255, 255, 255));
       btnRelatorios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       btnRelatorios.setText("RELATÓRIOS");
-      btnRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      btnRelatorios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
       btnRelatorios.addMouseListener(new java.awt.event.MouseAdapter() {
          public void mouseExited(java.awt.event.MouseEvent evt) {
             btnRelatoriosMouseExited(evt);
@@ -166,7 +184,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
       btnOpcoesAjuda.setForeground(new java.awt.Color(255, 255, 255));
       btnOpcoesAjuda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       btnOpcoesAjuda.setText("AJUDA");
-      btnOpcoesAjuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      btnOpcoesAjuda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
       btnOpcoesAjuda.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
       btnOpcoesAjuda.addMouseListener(new java.awt.event.MouseAdapter() {
          public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -207,12 +225,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
       panBtnClose.add(BtnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 30));
 
       panPrincipal.add(panBtnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, 40, 30));
-
-      lblIconLogo.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-      lblIconLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      lblIconLogo.setText("LOGO");
-      lblIconLogo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-      panPrincipal.add(lblIconLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 340, 310));
 
       getContentPane().add(panPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 450));
 
@@ -307,6 +319,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
       btnOpcoes.setBackground(new Color(0, 0, 0, 1));
    }//GEN-LAST:event_btnOpcoesMouseExited
 
+   private void btnOpcoesSobreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOpcoesSobreMouseClicked
+      TelaSobre objTelaSobre = new TelaSobre();
+      showPanel(objTelaSobre);
+   }//GEN-LAST:event_btnOpcoesSobreMouseClicked
+
    /**
     * @param args the command line arguments
     */
@@ -362,6 +379,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
    private javax.swing.JLabel lblNomeUser;
    private javax.swing.JPanel panBarraSup;
    private javax.swing.JPanel panBtnClose;
+   private javax.swing.JPanel panDinamico;
    private javax.swing.JPanel panPrincipal;
    // End of variables declaration//GEN-END:variables
+
+   private void showPanel(JPanel panel) {
+      lblIconLogo.setVisible(false);
+      panel.setSize(520, 420);
+      panel.setLocation(0, 0);
+
+      panDinamico.removeAll();
+      panDinamico.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+      panDinamico.revalidate();
+      panDinamico.repaint();
+   }
+
 }
