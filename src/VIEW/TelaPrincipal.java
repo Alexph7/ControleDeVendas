@@ -228,6 +228,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
    }//GEN-LAST:event_btnCadastroMouseEntered
 
    private void btnCadastroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroMouseExited
+        btnRelatorios.setOpaque(false);
         btnCadastro.setBackground(new Color(0, 0, 0, 1));
    }//GEN-LAST:event_btnCadastroMouseExited
 
