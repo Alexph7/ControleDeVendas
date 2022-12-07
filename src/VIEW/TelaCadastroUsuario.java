@@ -5,6 +5,7 @@
 package VIEW;
 
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -161,10 +162,20 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
         txtIdCadUser.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtIdCadUser.setBorder(null);
+        txtIdCadUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtIdCadUserKeyPressed(evt);
+            }
+        });
         panelCadastroUsuario.add(txtIdCadUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 80, 110, 30));
 
         txtNomeCadUser.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtNomeCadUser.setBorder(null);
+        txtNomeCadUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNomeCadUserKeyPressed(evt);
+            }
+        });
         panelCadastroUsuario.add(txtNomeCadUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 410, 30));
 
         lblId.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -177,6 +188,11 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
         txtSenhaCadUser.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtSenhaCadUser.setBorder(null);
+        txtSenhaCadUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaCadUserKeyPressed(evt);
+            }
+        });
         panelCadastroUsuario.add(txtSenhaCadUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, 220, 30));
 
         lblCampoObrig.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -185,6 +201,11 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
         txtLoginCadUser.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtLoginCadUser.setBorder(null);
+        txtLoginCadUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtLoginCadUserKeyPressed(evt);
+            }
+        });
         panelCadastroUsuario.add(txtLoginCadUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 260, 30));
 
         txtFoneCadUser.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -333,6 +354,30 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     private void btnCadastroCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroCloseMouseClicked
         System.exit(0);
     }//GEN-LAST:event_btnCadastroCloseMouseClicked
+
+    private void txtNomeCadUserKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeCadUserKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtIdCadUser.requestFocus();
+        }
+    }//GEN-LAST:event_txtNomeCadUserKeyPressed
+
+    private void txtIdCadUserKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdCadUserKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtLoginCadUser.requestFocus();
+        }
+    }//GEN-LAST:event_txtIdCadUserKeyPressed
+
+    private void txtLoginCadUserKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLoginCadUserKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtSenhaCadUser.requestFocus();
+        }
+    }//GEN-LAST:event_txtLoginCadUserKeyPressed
+
+    private void txtSenhaCadUserKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaCadUserKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtFoneCadUser.requestFocus();
+        }
+    }//GEN-LAST:event_txtSenhaCadUserKeyPressed
 
     /**
      * @param args the command line arguments
