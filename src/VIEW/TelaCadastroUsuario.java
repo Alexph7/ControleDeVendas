@@ -4,8 +4,11 @@
  */
 package VIEW;
 
+import DAO.UsuarioDAO;
+import DTO.UsuarioDTO;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -34,6 +37,10 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     private void initComponents() {
 
         panelCadastroUsuario = new javax.swing.JPanel();
+        panCombobox = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
+        cmbUserOption = new javax.swing.JLabel();
+        cmbAdminOption = new javax.swing.JLabel();
         panelLateral = new javax.swing.JPanel();
         lblNome = new javax.swing.JLabel();
         lblFone = new javax.swing.JLabel();
@@ -41,10 +48,6 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         sepFone = new javax.swing.JSeparator();
         sepNome = new javax.swing.JSeparator();
         sepLogin = new javax.swing.JSeparator();
-        panCombobox = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
-        lblAdmin = new javax.swing.JLabel();
-        lblAdmin1 = new javax.swing.JLabel();
         lblBarraSuperior = new javax.swing.JLabel();
         txtIdCadUser = new javax.swing.JTextField();
         txtNomeCadUser = new javax.swing.JTextField();
@@ -55,8 +58,6 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         txtLoginCadUser = new javax.swing.JTextField();
         txtFoneCadUser = new javax.swing.JTextField();
         lblSenha = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblCadUser = new javax.swing.JTable();
         sepSenha = new javax.swing.JSeparator();
         SepSenha = new javax.swing.JSeparator();
         SepFone = new javax.swing.JSeparator();
@@ -70,6 +71,8 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         btnPesquisar = new javax.swing.JLabel();
         btnCadastroClose = new javax.swing.JLabel();
         lblBarraTitulo = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblCadUser = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastrar Usuarios");
@@ -82,6 +85,41 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         panelCadastroUsuario.setBackground(new java.awt.Color(255, 255, 255));
         panelCadastroUsuario.setMinimumSize(new java.awt.Dimension(760, 450));
         panelCadastroUsuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panCombobox.setBackground(new java.awt.Color(255, 255, 255));
+        panCombobox.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 204, 204), null));
+        panCombobox.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setForeground(new java.awt.Color(0, 204, 204));
+        jSeparator1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jSeparator1.setOpaque(true);
+        panCombobox.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 140, 0));
+
+        cmbUserOption.setBackground(new java.awt.Color(153, 255, 204));
+        cmbUserOption.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        cmbUserOption.setText("User");
+        cmbUserOption.setOpaque(true);
+        cmbUserOption.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cmbUserOptionKeyPressed(evt);
+            }
+        });
+        panCombobox.add(cmbUserOption, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 140, 30));
+
+        cmbAdminOption.setBackground(new java.awt.Color(153, 255, 204));
+        cmbAdminOption.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        cmbAdminOption.setText("Admin");
+        cmbAdminOption.setFocusable(false);
+        cmbAdminOption.setOpaque(true);
+        cmbAdminOption.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cmbAdminOptionMouseClicked(evt);
+            }
+        });
+        panCombobox.add(cmbAdminOption, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 30));
+
+        panelCadastroUsuario.add(panCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 210, 140, 62));
 
         panelLateral.setBackground(new java.awt.Color(0, 204, 204));
         panelLateral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -113,31 +151,6 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         panelLateral.add(sepLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 157, 100, -1));
 
         panelCadastroUsuario.add(panelLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 450));
-
-        panCombobox.setBackground(new java.awt.Color(255, 255, 255));
-        panCombobox.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 204, 204), null));
-        panCombobox.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
-        jSeparator1.setForeground(new java.awt.Color(0, 204, 204));
-        jSeparator1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jSeparator1.setOpaque(true);
-        panCombobox.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 140, 0));
-
-        lblAdmin.setBackground(new java.awt.Color(153, 255, 204));
-        lblAdmin.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        lblAdmin.setText("User");
-        lblAdmin.setOpaque(true);
-        panCombobox.add(lblAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 140, 30));
-
-        lblAdmin1.setBackground(new java.awt.Color(153, 255, 204));
-        lblAdmin1.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
-        lblAdmin1.setText("Admin");
-        lblAdmin1.setFocusable(false);
-        lblAdmin1.setOpaque(true);
-        panCombobox.add(lblAdmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 30));
-
-        panelCadastroUsuario.add(panCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 210, 140, 62));
 
         lblBarraSuperior.setBackground(new java.awt.Color(255, 255, 255));
         lblBarraSuperior.setFont(new java.awt.Font("Roboto", 0, 17)); // NOI18N
@@ -223,22 +236,6 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         lblSenha.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         lblSenha.setText("*Senha");
         panelCadastroUsuario.add(lblSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 60, 30));
-
-        tblCadUser.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tblCadUser.setOpaque(false);
-        jScrollPane1.setViewportView(tblCadUser);
-
-        panelCadastroUsuario.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 560, 160));
         panelCadastroUsuario.add(sepSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 110, 10));
         panelCadastroUsuario.add(SepSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 410, 10));
         panelCadastroUsuario.add(SepFone, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 260, 10));
@@ -278,6 +275,11 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         btnAdicionar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnAdicionar.setText("ADICIONAR");
         btnAdicionar.setOpaque(true);
+        btnAdicionar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAdicionarMouseClicked(evt);
+            }
+        });
         panelCadastroUsuario.add(btnAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 405, 120, 30));
 
         btnPesquisar.setBackground(new java.awt.Color(0, 204, 204));
@@ -308,6 +310,22 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         lblBarraTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBarraTitulo.setText("Cadastro de Usuários");
         panelCadastroUsuario.add(lblBarraTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 540, 30));
+
+        tblCadUser.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tblCadUser.setOpaque(false);
+        jScrollPane1.setViewportView(tblCadUser);
+
+        panelCadastroUsuario.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 560, 160));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -395,6 +413,21 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         txtNomeCadUser.setText(txtNomeCadUser.getText().replaceAll("[^a-z,A-Z]", ""));
     }//GEN-LAST:event_txtNomeCadUserKeyReleased
 
+    private void btnAdicionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdicionarMouseClicked
+        Cadastrar();
+    }//GEN-LAST:event_btnAdicionarMouseClicked
+
+    private void cmbAdminOptionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbAdminOptionMouseClicked
+        CmbNivelAcesso.setText(cmbAdminOption.getText());
+        panCombobox.setVisible(false);
+    }//GEN-LAST:event_cmbAdminOptionMouseClicked
+
+    private void cmbUserOptionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbUserOptionKeyPressed
+        CmbNivelAcesso.setText(cmbUserOption.getText());
+        panCombobox.setVisible(false);
+
+    }//GEN-LAST:event_cmbUserOptionKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -442,10 +475,10 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel btnCadastroClose;
     private javax.swing.JLabel btnExcluir;
     private javax.swing.JLabel btnPesquisar;
+    private javax.swing.JLabel cmbAdminOption;
+    private javax.swing.JLabel cmbUserOption;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lblAdmin;
-    private javax.swing.JLabel lblAdmin1;
     private javax.swing.JLabel lblBarraSuperior;
     private javax.swing.JLabel lblBarraTitulo;
     private javax.swing.JLabel lblCampoObrig;
@@ -471,5 +504,54 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField txtNomeCadUser;
     private javax.swing.JTextField txtSenhaCadUser;
     // End of variables declaration//GEN-END:variables
+
+    public void Cadastrar() {
+        //Declara Variaveis para receber o resultado do usuario do form, depois passa o resultados para DTO e depois executa a classe DAO
+        if (txtNomeCadUser.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Preencha Nome do Usuário");
+            txtNomeCadUser.requestFocus();
+        } else if (txtLoginCadUser.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Preencha o Login");
+            txtLoginCadUser.requestFocus();
+        } else if (txtSenhaCadUser.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Preencha a Senha");
+            txtSenhaCadUser.requestFocus();
+        } else if (CmbNivelAcesso.getText().equals("Selecione")) {
+            JOptionPane.showMessageDialog(null, "Escolha O Nível de Acessso");
+        } else {
+            String nome, login, senha, fone, nivelAcesso;
+            nome = txtNomeCadUser.getText();
+            login = txtLoginCadUser.getText();
+            senha = txtSenhaCadUser.getText();
+            fone = txtFoneCadUser.getText();
+            nivelAcesso = CmbNivelAcesso.getText();
+
+            //informações recebidas, agora passa para DTO encapsular os dados
+            UsuarioDTO objusuariodto = new UsuarioDTO();
+
+            objusuariodto.setNome(nome);
+            objusuariodto.setLogin(login);
+            objusuariodto.setSenha(senha);
+            objusuariodto.setFone(fone);
+            objusuariodto.setNivelDeAcesso(nivelAcesso);
+
+            //Dados já passados para classe DTO agora executar o metodo da Classe DAO
+            UsuarioDAO objusuariodao = new UsuarioDAO();
+            objusuariodao.cadastrarUsuario(objusuariodto);
+            JOptionPane.showMessageDialog(null, "Usuário Cadastrado com Sucesso Numero: ");
+
+            limparCampos();
+        }
+    }
+
+    private void limparCampos() {
+        txtNomeCadUser.setText(null);
+        txtIdCadUser.setText(null);
+        txtLoginCadUser.setText(null);
+        txtSenhaCadUser.setText(null);
+        txtFoneCadUser.setText(null);
+        panCombobox.setVisible(false);
+        txtNomeCadUser.requestFocus();
+    }
 
 }
