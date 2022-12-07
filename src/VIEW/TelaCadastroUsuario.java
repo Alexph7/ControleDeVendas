@@ -13,6 +13,7 @@ import java.awt.Color;
 public class TelaCadastroUsuario extends javax.swing.JFrame {
 
     int xMouse, yMouse;
+    Menu objMenu = new Menu();
 
     /**
      * Creates new form TelaCadastroUsuario
@@ -261,6 +262,17 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         btnCadastroClose.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         btnCadastroClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnCadastroClose.setText("x");
+        btnCadastroClose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCadastroCloseMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCadastroCloseMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCadastroCloseMouseExited(evt);
+            }
+        });
         panelCadastroUsuario.add(btnCadastroClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(717, 0, 42, 30));
 
         lblBarraTitulo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
@@ -303,13 +315,24 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_lblBarraSuperiorMousePressed
 
     private void lblBarraSuperiorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBarraSuperiorMouseEntered
-        Menu objMenu = new Menu();
         objMenu.mouseEntered(lblBarraTitulo, true, 204, 204, 204, 255);
     }//GEN-LAST:event_lblBarraSuperiorMouseEntered
 
     private void lblBarraSuperiorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBarraSuperiorMouseExited
         lblBarraTitulo.setBackground(Color.white);
     }//GEN-LAST:event_lblBarraSuperiorMouseExited
+
+    private void btnCadastroCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroCloseMouseEntered
+        objMenu.mouseEntered(btnCadastroClose, true, 255, 4, 0, 255);
+    }//GEN-LAST:event_btnCadastroCloseMouseEntered
+
+    private void btnCadastroCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroCloseMouseExited
+        btnCadastroClose.setBackground(Color.white);
+    }//GEN-LAST:event_btnCadastroCloseMouseExited
+
+    private void btnCadastroCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroCloseMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btnCadastroCloseMouseClicked
 
     /**
      * @param args the command line arguments
