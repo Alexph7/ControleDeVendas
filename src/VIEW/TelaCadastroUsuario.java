@@ -175,6 +175,9 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtNomeCadUserKeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNomeCadUserKeyReleased(evt);
+            }
         });
         panelCadastroUsuario.add(txtNomeCadUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 410, 30));
 
@@ -210,6 +213,11 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
         txtFoneCadUser.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtFoneCadUser.setBorder(null);
+        txtFoneCadUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtFoneCadUserKeyReleased(evt);
+            }
+        });
         panelCadastroUsuario.add(txtFoneCadUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 260, 30));
 
         lblSenha.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -378,6 +386,14 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
             txtFoneCadUser.requestFocus();
         }
     }//GEN-LAST:event_txtSenhaCadUserKeyPressed
+
+    private void txtFoneCadUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFoneCadUserKeyReleased
+        txtFoneCadUser.setText(txtFoneCadUser.getText().replaceAll("[^0-9]", ""));
+    }//GEN-LAST:event_txtFoneCadUserKeyReleased
+
+    private void txtNomeCadUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeCadUserKeyReleased
+        txtNomeCadUser.setText(txtNomeCadUser.getText().replaceAll("[^a-z,A-Z]", ""));
+    }//GEN-LAST:event_txtNomeCadUserKeyReleased
 
     /**
      * @param args the command line arguments
