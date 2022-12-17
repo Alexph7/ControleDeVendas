@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package VIEW;
 
 import DAO.UsuarioDAO;
@@ -71,8 +67,6 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         btnPesquisar = new javax.swing.JLabel();
         btnCadastroClose = new javax.swing.JLabel();
         lblBarraTitulo = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblCadUser = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastrar Usuarios");
@@ -311,22 +305,6 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         lblBarraTitulo.setText("Cadastro de Usuários");
         panelCadastroUsuario.add(lblBarraTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 540, 30));
 
-        tblCadUser.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tblCadUser.setOpaque(false);
-        jScrollPane1.setViewportView(tblCadUser);
-
-        panelCadastroUsuario.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 560, 160));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -342,6 +320,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    //Personaliza o Combobox para que fique visivel e invisivel as opçoes de escolha ao clicar sobre.
     private void CmbNivelAcessoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CmbNivelAcessoMouseClicked
         if (!panCombobox.isVisible()) {
             panCombobox.setVisible(true);
@@ -350,6 +329,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CmbNivelAcessoMouseClicked
 
+    //Metodo Para Arrastar Janela
     private void lblBarraSuperiorMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBarraSuperiorMouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
@@ -477,7 +457,6 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel btnPesquisar;
     private javax.swing.JLabel cmbAdminOption;
     private javax.swing.JLabel cmbUserOption;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblBarraSuperior;
     private javax.swing.JLabel lblBarraTitulo;
@@ -497,7 +476,6 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     private javax.swing.JSeparator sepSenha;
     private javax.swing.JSeparator sepSenha1;
     private javax.swing.JLabel setaCombobox;
-    private javax.swing.JTable tblCadUser;
     private javax.swing.JTextField txtFoneCadUser;
     private javax.swing.JTextField txtIdCadUser;
     private javax.swing.JTextField txtLoginCadUser;
@@ -539,7 +517,6 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
             UsuarioDAO objusuariodao = new UsuarioDAO();
             objusuariodao.cadastrarUsuario(objusuariodto);
             JOptionPane.showMessageDialog(null, "Usuário Cadastrado com Sucesso Numero: ");
-
             limparCampos();
         }
     }
