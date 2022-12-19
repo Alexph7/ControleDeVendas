@@ -68,6 +68,7 @@ public class Menu extends javax.swing.JFrame {
         panelDinamico.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelLogo.setBackground(new java.awt.Color(255, 255, 255));
+        panelLogo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
         panelLogo.setMinimumSize(new java.awt.Dimension(520, 420));
         panelLogo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -222,6 +223,7 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(panelLateralMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 450));
 
         panelBarraSup.setBackground(new java.awt.Color(255, 255, 255));
+        panelBarraSup.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 0, 0)));
         panelBarraSup.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(panelBarraSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 480, 30));
 
@@ -233,6 +235,7 @@ public class Menu extends javax.swing.JFrame {
         btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnClose.setText("x");
         btnClose.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnClose.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 1, new java.awt.Color(0, 0, 0)));
         btnClose.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnClose.setOpaque(true);
         btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
