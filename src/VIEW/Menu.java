@@ -32,11 +32,15 @@ public class Menu extends javax.swing.JFrame {
         lblIconLogo = new javax.swing.JLabel();
         panelCadastro = new javax.swing.JPanel();
         btnCadastrarUsuario = new javax.swing.JLabel();
+        lblUsuarioLegenda = new javax.swing.JLabel();
         panelRelatorios = new javax.swing.JPanel();
         btnRelatorioVendas = new javax.swing.JLabel();
+        lblVendasLegenda = new javax.swing.JLabel();
         panelOpcoes = new javax.swing.JPanel();
         btnOpcoesAjuda = new javax.swing.JLabel();
         btnOpcoesSobre = new javax.swing.JLabel();
+        lblSobreLegenda = new javax.swing.JLabel();
+        lblAjudaLegenda = new javax.swing.JLabel();
         panelLateralMenu = new javax.swing.JPanel();
         btnCadastro = new javax.swing.JLabel();
         btnOpcoes = new javax.swing.JLabel();
@@ -88,6 +92,9 @@ public class Menu extends javax.swing.JFrame {
         });
         panelCadastro.add(btnCadastrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 130, 110));
 
+        lblUsuarioLegenda.setText("Usuário");
+        panelCadastro.add(lblUsuarioLegenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
+
         panelDinamico.add(panelCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 420));
 
         panelRelatorios.setBackground(new java.awt.Color(255, 255, 255));
@@ -104,6 +111,9 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         panelRelatorios.add(btnRelatorioVendas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 130, 110));
+
+        lblVendasLegenda.setText("Vendas");
+        panelRelatorios.add(lblVendasLegenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, -1, -1));
 
         panelDinamico.add(panelRelatorios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 420));
 
@@ -127,6 +137,12 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         panelOpcoes.add(btnOpcoesSobre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 130, 110));
+
+        lblSobreLegenda.setText("Sobre");
+        panelOpcoes.add(lblSobreLegenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
+
+        lblAjudaLegenda.setText("Ajuda");
+        panelOpcoes.add(lblAjudaLegenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, -1, -1));
 
         panelDinamico.add(panelOpcoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 420));
 
@@ -395,11 +411,15 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JLabel lblAjudaLegenda;
     private javax.swing.JLabel lblBarraSup;
     private javax.swing.JLabel lblIconFundoAzul;
     public javax.swing.JLabel lblIconLogo;
     private javax.swing.JLabel lblIconUser;
     private javax.swing.JLabel lblNomeUser;
+    private javax.swing.JLabel lblSobreLegenda;
+    private javax.swing.JLabel lblUsuarioLegenda;
+    private javax.swing.JLabel lblVendasLegenda;
     private javax.swing.JPanel panelBarraSup;
     private javax.swing.JPanel panelBtnClose;
     private javax.swing.JPanel panelCadastro;
