@@ -13,7 +13,6 @@ import javax.swing.JOptionPane;
 public class TelaCadastroUsuario extends javax.swing.JFrame {
 
     int xMouse, yMouse;
-    Menu objMenu = new Menu();
 
     /**
      * Creates new form TelaCadastroUsuario
@@ -44,6 +43,8 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         sepFone = new javax.swing.JSeparator();
         sepNome = new javax.swing.JSeparator();
         sepLogin = new javax.swing.JSeparator();
+        lblHomeMenu = new javax.swing.JLabel();
+        SeparadorHome = new javax.swing.JLabel();
         lblBarraSuperior = new javax.swing.JLabel();
         txtIdCadUser = new javax.swing.JTextField();
         txtNomeCadUser = new javax.swing.JTextField();
@@ -143,6 +144,23 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         sepLogin.setBackground(new java.awt.Color(255, 255, 255));
         sepLogin.setForeground(new java.awt.Color(255, 255, 255));
         panelLateral.add(sepLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 157, 100, -1));
+
+        lblHomeMenu.setBackground(new java.awt.Color(255, 255, 255));
+        lblHomeMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHomeMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pictures/home.png"))); // NOI18N
+        lblHomeMenu.setToolTipText("MENU");
+        lblHomeMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblHomeMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblHomeMenuMouseClicked(evt);
+            }
+        });
+        panelLateral.add(lblHomeMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 180, -1));
+
+        SeparadorHome.setForeground(new java.awt.Color(255, 255, 255));
+        SeparadorHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SeparadorHome.setText("_________________");
+        panelLateral.add(SeparadorHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 140, -1));
 
         panelCadastroUsuario.add(panelLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 450));
 
@@ -342,7 +360,9 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_lblBarraSuperiorMousePressed
 
     private void lblBarraSuperiorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBarraSuperiorMouseEntered
-        objMenu.mouseEntered(lblBarraTitulo, true, 204, 204, 204, 255);
+        lblBarraTitulo.setOpaque(true);
+        lblBarraTitulo.setBackground(new Color(204, 204, 204));
+        repaint();
     }//GEN-LAST:event_lblBarraSuperiorMouseEntered
 
     private void lblBarraSuperiorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBarraSuperiorMouseExited
@@ -350,7 +370,9 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_lblBarraSuperiorMouseExited
 
     private void btnCadastroCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroCloseMouseEntered
-        objMenu.mouseEntered(btnCadastroClose, true, 255, 4, 0, 255);
+        btnCadastroClose.setOpaque(true);
+        btnCadastroClose.setBackground(new Color(255, 4, 0));
+        repaint();
     }//GEN-LAST:event_btnCadastroCloseMouseEntered
 
     private void btnCadastroCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroCloseMouseExited
@@ -408,6 +430,12 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
     }//GEN-LAST:event_cmbUserOptionKeyPressed
 
+    private void lblHomeMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHomeMenuMouseClicked
+        this.dispose();
+        Menu objMenu = new Menu();
+        objMenu.setVisible(true);
+    }//GEN-LAST:event_lblHomeMenuMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -450,6 +478,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     private javax.swing.JSeparator SepFone;
     private javax.swing.JSeparator SepLogin;
     private javax.swing.JSeparator SepSenha;
+    private javax.swing.JLabel SeparadorHome;
     private javax.swing.JLabel btnAdicionar;
     private javax.swing.JLabel btnAlterar;
     private javax.swing.JLabel btnCadastroClose;
@@ -462,6 +491,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel lblBarraTitulo;
     private javax.swing.JLabel lblCampoObrig;
     private javax.swing.JLabel lblFone;
+    private javax.swing.JLabel lblHomeMenu;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblNivelAcess;
