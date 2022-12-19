@@ -31,6 +31,7 @@ public class Menu extends javax.swing.JFrame {
         panelLogo = new javax.swing.JPanel();
         lblIconLogo = new javax.swing.JLabel();
         panelCadastro = new javax.swing.JPanel();
+        btnCadastrarUsuario = new javax.swing.JLabel();
         panelRelatorios = new javax.swing.JPanel();
         btnRelatorioVendas = new javax.swing.JLabel();
         panelOpcoes = new javax.swing.JPanel();
@@ -77,6 +78,16 @@ public class Menu extends javax.swing.JFrame {
         panelCadastro.setBackground(new java.awt.Color(255, 255, 255));
         panelCadastro.setMinimumSize(new java.awt.Dimension(520, 420));
         panelCadastro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnCadastrarUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnCadastrarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pictures/adicionar-usuario.png"))); // NOI18N
+        btnCadastrarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCadastrarUsuarioMouseClicked(evt);
+            }
+        });
+        panelCadastro.add(btnCadastrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 130, 110));
+
         panelDinamico.add(panelCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 420));
 
         panelRelatorios.setBackground(new java.awt.Color(255, 255, 255));
@@ -316,13 +327,19 @@ public class Menu extends javax.swing.JFrame {
    }//GEN-LAST:event_btnOpcoesMouseExited
 
     private void btnOpcoesSobreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOpcoesSobreMouseClicked
-        TelaOpcoesSobre objTelaOpcoesSobre = new TelaOpcoesSobre();
-        objTelaOpcoesSobre.setVisible(true);
+        new TelaOpcoesSobre().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnOpcoesSobreMouseClicked
 
     private void btnRelatorioVendasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRelatorioVendasMouseClicked
         new TelaRelatorioVendas().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnRelatorioVendasMouseClicked
+
+    private void btnCadastrarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarUsuarioMouseClicked
+        new TelaCadastroUsuario().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCadastrarUsuarioMouseClicked
 
     /**
      * @param args the command line arguments
@@ -367,6 +384,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnCadastrarUsuario;
     private javax.swing.JLabel btnCadastro;
     private javax.swing.JLabel btnClose;
     private javax.swing.JLabel btnOpcoes;
