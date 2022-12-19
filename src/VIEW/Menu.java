@@ -1,7 +1,6 @@
 package VIEW;
 
 import java.awt.Color;
-import javax.swing.JPanel;
 
 /**
  *
@@ -392,16 +391,5 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel panelOpcoes;
     private javax.swing.JPanel panelRelatorios;
     // End of variables declaration//GEN-END:variables
-
-    public void showPanel(JPanel panel) {
-
-        panel.setSize(520, 420);
-        panel.setLocation(0, 0);
-
-        panelDinamico.removeAll();
-        panelDinamico.revalidate();
-        panelDinamico.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-        panelDinamico.repaint();
-    }
 
 }
