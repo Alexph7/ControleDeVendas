@@ -1,7 +1,6 @@
 package VIEW;
 
 import java.awt.Color;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -403,23 +402,6 @@ public class Menu extends javax.swing.JFrame {
         panelDinamico.revalidate();
         panelDinamico.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
         panelDinamico.repaint();
-    }
-
-    public void mouseEntered(JLabel label, boolean opacidade, int corR, int corG, int corB, int transparencia, JPanel panelASerExibidoEmTela) {
-
-        lblIconLogo.setVisible(false);
-        label.setOpaque(opacidade);
-        label.setBackground(new Color(corR, corG, corB, transparencia));
-        repaint();
-        panelDinamico.setComponentZOrder(panelASerExibidoEmTela, 0);
-    }
-
-    public void mouseEntered(JLabel label, boolean opacidade, int corR, int corG, int corB, int transparencia) {
-
-        lblIconLogo.setVisible(false);
-        label.setOpaque(opacidade);
-        label.setBackground(new Color(corR, corG, corB, transparencia));
-        repaint();
     }
 
 }
